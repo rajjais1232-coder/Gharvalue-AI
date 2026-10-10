@@ -177,16 +177,30 @@ def load_model() -> tuple[Pipeline | None, dict | None]:
 
     Returns
     -------
-    (pipeline, metadata) or (None, None) if not found
+    (pipeline, metadata) or (None, None) if not found or if the file is
+    corrupted / incompatible with the current library versions.
     """
     if not MODEL_PATH.exists():
         return None, None
     if not METADATA_PATH.exists():
         return None, None
 
-    pipeline = joblib.load(MODEL_PATH)
-    with open(METADATA_PATH, "r", encoding="utf-8") as fh:
-        metadata = json.load(fh)
+    try:
+        pipeline = joblib.load(MODEL_PATH)
+    except Exception:
+        # Corrupted file or version incompatibility (e.g. numpy/sklearn upgrade).
+        # Delete the bad file so the UI shows "not trained" rather than crashing.
+        try:
+            MODEL_PATH.unlink()
+        except OSError:
+            pass
+        return None, None
+
+    try:
+        with open(METADATA_PATH, "r", encoding="utf-8") as fh:
+            metadata = json.load(fh)
+    except Exception:
+        return None, None
 
     return pipeline, metadata
 
