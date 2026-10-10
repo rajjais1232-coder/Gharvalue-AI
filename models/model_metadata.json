@@ -1,0 +1,51 @@
+{
+  "model_name": "Gradient Boosting",
+  "trained_at": "2026-10-10T15:39:14.294718",
+  "dataset_label": "\u26a0\ufe0f Synthetic Demo Data (no real dataset loaded)",
+  "feature_names": [
+    "area",
+    "bedrooms",
+    "bathrooms",
+    "age",
+    "floor",
+    "total_floors",
+    "parking",
+    "city",
+    "state",
+    "property_type",
+    "furnishing",
+    "locality"
+  ],
+  "metrics": {
+    "MAE": 951973.84,
+    "RMSE": 1344178.62,
+    "R2": 0.9492,
+    "train_size": 1200,
+    "test_size": 300
+  },
+  "sklearn_version": "1.7.2",
+  "test_size": 0.2,
+  "random_state": 42,
+  "known_cities": [
+    "Pune",
+    "Raipur",
+    "Lucknow",
+    "Noida",
+    "Indore",
+    "Mysore",
+    "Kolkata",
+    "Kochi",
+    "Chandigarh",
+    "Nagpur",
+    "Bilaspur",
+    "Gurgaon",
+    "Delhi",
+    "Bangalore",
+    "Bhopal",
+    "Jaipur",
+    "Ahmedabad",
+    "Hyderabad",
+    "Mumbai",
+    "Chennai"
+  ]
+}

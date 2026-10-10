@@ -1,0 +1,30 @@
+{
+  "Linear Regression": {
+    "MAE": 3397223.49,
+    "RMSE": 4756125.71,
+    "R2": 0.3642,
+    "train_size": 1200,
+    "test_size": 300
+  },
+  "Random Forest": {
+    "MAE": 2007819.64,
+    "RMSE": 2970913.51,
+    "R2": 0.7519,
+    "train_size": 1200,
+    "test_size": 300
+  },
+  "Extra Trees": {
+    "MAE": 2626385.36,
+    "RMSE": 3707276.73,
+    "R2": 0.6137,
+    "train_size": 1200,
+    "test_size": 300
+  },
+  "Gradient Boosting": {
+    "MAE": 951973.84,
+    "RMSE": 1344178.62,
+    "R2": 0.9492,
+    "train_size": 1200,
+    "test_size": 300
+  }
+}
